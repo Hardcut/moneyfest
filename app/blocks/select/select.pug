@@ -1,0 +1,10 @@
+mixin select(data)
+  .select(data-select data-close-on-select=(data.closeOnSelect ? '' : false))&attributes(attributes)
+    .select__active(data-select-btn data-select-default=(data.defaultText ? data.defaultText : false))
+      span.select__text #{data.textBefore ? data.textBefore : ''}
+        span(data-select-changing)
+    .select__drop(data-select-list)
+      each item, index in data.items
+        label.select__item(data-select-option)
+          input.select__input(type=data.type, name=(data.name ? data.name : false) data-select-input checked=(data.isChecked && index === 0))
+          span #{item}

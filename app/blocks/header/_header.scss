@@ -1,0 +1,43 @@
+.header {
+  @include bgImage(no-repeat, center, cover, false);
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: "";
+    @include size(100%);
+    background: linear-gradient(180deg, #000 0%, #000 100%);
+    opacity: 0.15;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(var(--vh, 1vh) * 100);
+  }
+  &__title {
+    &:first-child {
+      margin-bottom: 30px;
+      @include media(max, 991) {
+        margin-bottom: 18px;
+      }
+    }
+    &:last-child {
+      margin-top: 30px;
+      @include media(max, 991) {
+        margin-top: 21px;
+      }
+    }
+  }
+  &__logo {
+    width: 100%;
+    max-width: 931px;
+    padding: 0 15px;
+    aspect-ratio: 931/81;
+    filter: drop-shadow(0 4px 100px rgba(216, 165, 106, 0.5));
+  }
+}

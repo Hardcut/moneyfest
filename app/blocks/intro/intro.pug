@@ -1,0 +1,6 @@
+mixin intro(data)
+  .intro(class=data.decor ? "intro--w-decor" : "")&attributes(attributes)
+    h2.intro__title #{data.title}
+    if data.text
+      .intro__text
+        p #{data.text}

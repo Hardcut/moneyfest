@@ -1,0 +1,5 @@
+mixin button(data)
+  if !data.link
+    button.button(class=`${data.class ? data.class : ""}`)&attributes(attributes) #{data.title}
+  else
+    a.button(href=`${data.link}` class=`${data.class ? data.class : ""}`)&attributes(attributes) #{data.title}

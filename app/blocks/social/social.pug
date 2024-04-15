@@ -1,0 +1,6 @@
+mixin social(items)
+  .social&attributes(attributes)
+    each item in items
+      a.social__item(href=`${item.link}` target="_blank")
+        svg.social__icon(width=`${item.sizes[0]}` height=`${item.sizes[1]}`)
+          use(href=`#icon-${item.icon}`)

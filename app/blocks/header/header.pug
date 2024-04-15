@@ -1,0 +1,9 @@
+mixin header(data)
+  header.header(style=`background-image: url(img/image/${data.background}.png)`)
+    .container
+      .header__content
+        span.header__title.h2 #{data.upperTitle}
+        svg.header__logo
+          use(href=`#icon-${data.logo}`)
+        h1.visually-hidden #{data.h1}
+        span.header__title.h2 #{data.lowerTitle}

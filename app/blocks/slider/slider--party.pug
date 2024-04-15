@@ -1,0 +1,12 @@
+include /blocks/party/party
+
+mixin slider--party(slides)
+  .slider.slider--party
+    .swiper(data-swiper="party")
+      .swiper-wrapper
+        each slide in slides
+          .swiper-slide
+            +party({
+              image: slide.image,
+              letter: slide.letter,
+            })

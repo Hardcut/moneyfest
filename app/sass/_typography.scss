@@ -1,0 +1,26 @@
+main {
+  h1,
+  .h1,
+  h2,
+  .h2 {
+    display: block;
+    font-family: $font-headings;
+    font-weight: 400;
+    line-height: 1.37;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    &--left {
+      text-align: left;
+    }
+  }
+  h2,
+  .h2 {
+    font-size: 38px;
+    @include media(max, 991) {
+      font-size: 20px;
+      line-height: 1.4;
+    }
+  }
+}

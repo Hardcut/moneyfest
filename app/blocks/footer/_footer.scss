@@ -1,0 +1,5 @@
+.footer {
+  aspect-ratio: 1920/458;
+  min-height: 202px;
+  @include bgImage(no-repeat, top left, cover, false);
+}

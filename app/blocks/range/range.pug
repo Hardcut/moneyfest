@@ -1,0 +1,7 @@
+mixin range(data)
+  .range
+    .range__value #{data.value}
+    input.range__input(type="range" min=`${data.min}` max=`${data.max}` value=`${data.value}` id=`${data.id}`)
+    .range__labels
+      span.range__min min.#{data.min}
+      span.range__max max. #{data.max}

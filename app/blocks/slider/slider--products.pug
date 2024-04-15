@@ -1,0 +1,12 @@
+include /blocks/product/product
+
+mixin slider--products(slides)
+  .slider.slider--products
+    .swiper(data-swiper="products")
+      .swiper-wrapper
+         each slide in slides
+          .swiper-slide
+            +product({
+              image: slide,
+            })
+      .swiper-pagination

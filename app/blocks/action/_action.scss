@@ -1,0 +1,107 @@
+.actions__wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 46px;
+  @include media(max, 991) {
+    gap: 43px;
+  }
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 46px;
+  gap: 40px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  position: relative;
+  @include media(max, 991) {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 92px 33px 68px 23px;
+  }
+  &::before {
+    content: "";
+    @include size(63px, 66px);
+    @include bgImage(no-repeat, center, contain, "../img/image/corner.svg");
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &::after {
+    content: "";
+    @include size(16px, 18px);
+    @include bgImage(no-repeat, center, contain, "../img/image/lock.svg");
+    position: absolute;
+    top: 14px;
+    left: 14px;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 446px;
+    @include media(max, 991) {
+      flex-grow: 1;
+    }
+  }
+  &__date {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: $color-gold-7;
+    margin-bottom: 16px;
+    @include media(max, 991) {
+      font-size: 12px;
+      line-height: 1.67;
+      margin-bottom: 12px;
+    }
+  }
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.33;
+    margin-bottom: 4px;
+    @include media(max, 991) {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+  &__text {
+    color: $color-gold-6;
+    @include media(max, 991) {
+      font-size: 14px;
+      line-height: 1.57;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    flex: 0 0 370px;
+    @include media(max, 1199) {
+      flex: 0 0 280px;
+    }
+    @include media(max, 991) {
+      flex: 1 1 auto;
+    }
+    li {
+      font-weight: 600;
+      line-height: 1.4;
+      color: $color-gold-85;
+      @include media(max, 991) {
+        font-size: 14px;
+        line-height: 1.57;
+      }
+    }
+  }
+  &__icon {
+    width: 100%;
+    max-width: 160px;
+    flex-shrink: 0;
+    @include media(max, 991) {
+      filter: drop-shadow(0 0 150px rgba(249, 181, 109, 0.5));
+    }
+  }
+}

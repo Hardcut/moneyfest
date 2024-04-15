@@ -1,0 +1,45 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: fit-content;
+  min-width: 302px;
+  padding: 10px 12px 24px;
+  background-color: rgba(250, 250, 250, 0.03);
+  border-radius: 10px;
+  &__imagebox {
+    background-color: rgba(250, 250, 250, 0.03);
+    border-radius: 10px;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 22px 0 12px;
+  }
+  &__category,
+  &__desc {
+    font-size: 14px;
+    line-height: 1.57;
+    color: $color-gold-6;
+  }
+  &__category {
+    margin-bottom: 4px;
+  }
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  &__price {
+    width: fit-content;
+    font-weight: 600;
+    line-height: 1.4;
+    padding-right: 26px;
+    margin-top: 16px;
+    @include bgImage(
+      no-repeat,
+      top 2px right 0,
+      auto,
+      "../img/image/emerald.svg"
+    );
+  }
+}

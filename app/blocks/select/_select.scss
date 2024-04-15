@@ -1,0 +1,84 @@
+.select {
+  position: relative;
+  color: $color-gold;
+  &__active {
+    padding: 0 40px 12px 0;
+    border-bottom: 2px solid $color-gold-3;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.27;
+    cursor: pointer;
+    position: relative;
+    @include media(max, 991) {
+      padding: 0 30px 8px 0;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      @include size(21px, 13px);
+      @include bgImage(
+        no-repeat,
+        center,
+        contain,
+        "../img/image/arrow-select.svg"
+      );
+      top: 15px;
+      right: 0;
+      transition: $transition;
+      @include media(max, 991) {
+        @include size(13px, 8px);
+        top: 11px;
+      }
+    }
+    &.open {
+      &:before {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  &__text {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+  }
+  &__drop {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.27;
+    background-color: $color-black;
+    @include media(max, 991) {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+
+  &__item {
+    display: block;
+    padding: 12px 0;
+    border-bottom: 2px solid $color-gold-3;
+    cursor: pointer;
+    color: $color-gold;
+    @include media(max, 991) {
+      padding: 8px 0;
+    }
+    @include hover {
+      color: $color-black;
+      background-color: $color-gold;
+    }
+    &.active {
+      color: $color-black;
+      background-color: $color-gold;
+    }
+  }
+
+  &__input {
+    display: none;
+  }
+}

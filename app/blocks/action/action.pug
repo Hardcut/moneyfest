@@ -1,0 +1,12 @@
+mixin action(data)
+  .action
+    .action__content
+      span.action__date #{data.date}
+      span.action__title #{data.title}
+      .action__text
+        p #{data.text}
+    ul.action__list
+      li Открывается после выполнения основного задания
+      li Награда — VIP-условия по офферу
+    svg.action__icon
+      use(href=`#icon-${data.icon}`)

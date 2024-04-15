@@ -1,0 +1,253 @@
+extends ../../template/template.pug
+include /blocks/header/header
+include /blocks/intro/intro
+include /blocks/reward/reward__item
+include /blocks/reward/reward__sum
+include /blocks/range/range
+include /blocks/select/select
+include /blocks/action/action
+include /blocks/social/social
+include /blocks/slider/slider--party
+include /blocks/subnote/subnote
+include /blocks/feature/feature
+include /blocks/slider/slider--products
+include /blocks/button/button
+include /blocks/footer/footer
+
+block mainwrapper
+
+
+  +header({
+    upperTitle: "Новая акция leads",
+    logo: "logo",
+    h1: "Moneyfest",
+    lowerTitle: "01.12.2021-30.11.2022",
+    background: "header-bg"
+  })
+
+
+  section.mob-mb-230
+    .container
+
+      +intro({
+        title: "Узнай, какая награда ждет именно тебя",
+        decor: true,
+      })(class="mb-64 mob-mb-60")
+
+      .reward
+        .reward__block.reward__block--offer
+          span.reward__title Выбери оффер
+
+          +select({
+            closeOnSelect: true,
+            type: "radio",
+            name: "radio-group",
+            isChecked: true,
+            items: [
+              "Займер [micro][sale] 1",
+              "Займер [micro][sale] 2",
+              "Займер [micro][sale] 3"
+            ]
+          })(class="reward__select")
+
+          .reward__items
+            +reward__item({
+              title: "Цель",
+              text: "Выдача",
+            })
+            +reward__item({
+              title: "Выплата",
+              text: "1500 р",
+            })
+            +reward__item({
+              title: "Статистика",
+              text: "Автоаппрув",
+            })
+            +reward__item({
+              title: "Hold",
+              text: "14 дней",
+            })
+            +reward__item({
+              title: "EPC",
+              text: "52.16 р.",
+            })
+            +reward__item({
+              title: "AR",
+              text: "28.46%",
+            })
+
+        .reward__block.reward__block--conversion
+          span.reward__title Твои текущие конверсии
+
+          +range({
+            id: "reward-range",
+            value: 10,
+            min: 10,
+            max: 1000,
+          })
+
+        .reward__block.reward__block--total
+          span.reward__title Общая награда
+
+          +reward__sum({
+            currency: "₽",
+            price: "206 000",
+          })
+
+          .reward__items
+            +reward__item({
+              title: "Цель 1",
+              text: "1 650",
+            })
+            +reward__item({
+              title: "Цель 2",
+              text: "1 650",
+            })
+            +reward__item({
+              title: "Цель 3",
+              text: "1 650",
+            })
+            +reward__item({
+              title: "Награда 1",
+              text: "3 000",
+            })
+            +reward__item({
+              title: "Награда 2",
+              text: "3 000",
+            })
+            +reward__item({
+              title: "Награда 3",
+              text: "3 000",
+            })
+
+
+  section.mb-200
+    .container
+
+      +intro({
+        title: "Лучших вебмастеров мы пригласим в монако на грандиозный финал акции",
+        text: "Неважно, как много ты зарабатываешь и сколько конверсий делаешь. Выполняй как можно больше заданий, участвуй в Вызовах, завершай Секретные задания. Тогда именно тебя мы пригласим в Монако* на финал акции.",
+        decor: true,
+      })(class="mb-140 mob-mb-60")
+
+      +slider--party([
+        {
+          image: "party-pic-1",
+          letter: "p",
+        },
+        {
+          image: "party-pic-2",
+          letter: "a",
+        },
+        {
+          image: "party-pic-3",
+          letter: "r",
+        },
+        {
+          image: "party-pic-4",
+          letter: "t",
+        },
+        {
+          image: "party-pic-5",
+          letter: "y",
+        },
+      ])
+
+      +subnote({
+        text: "*Нам не хотелось бы, но место проведения финала может измениться из-за covid-19 и визового режима",
+      })(class="mt-73 mobile-hidden")
+
+
+  section.mob-mb-150
+    .container
+
+      +intro({
+        title: "Еще больше возможностей заработать на своем трафике",
+        text: "Дополнительные возможности, которые будут введены во время акции",
+        decor: true,
+      })(class="mb-64 mob-mb-33")
+
+      .actions__wrap
+        +action({
+          date: "Запуск 01.02.22",
+          title: "Секретные задания",
+          text: "Выполни основное задание, чтобы открыть доступ к секретному этапу с премиальным бонусом по офферу, который тебе точно понравится",
+          icon: "key",
+        })
+        +action({
+          date: "Запуск 01.03.22",
+          title: "Вызовы",
+          text: "Соревнуйся с другими вебмастерами в своем ранге, стань лучшим в задании-вызове по спонсорскому офферу и получи дополнительный приз ",
+          icon: "sword",
+        })
+
+
+  section.mob-mb-205
+    .container
+
+      .features
+        .features__content
+          h2.features__title.h2--left.mb-32 Тебя уже ждет обновленный Leads.Market
+
+          .features__items
+            +feature({
+              title: "10 категорий",
+              text: "от сертификата до авто",
+            })
+            +feature({
+              title: "300+ товаров",
+              text: "без лимита покупок",
+            })
+            +feature({
+              title: "100 заказов",
+              text: "в среднем в месяц",
+            })
+
+        +slider--products([
+          "product-pic-1",
+          "product-pic-2",
+          "product-pic-3",
+          "product-pic-4",
+          "product-pic-5",
+        ])
+
+
+  section.mb-26.mob-mb-102
+    .container
+
+      +intro({
+        title: "Мы уже загрузили задания для тебя",
+        text: "Подключи их в личном кабинете и начинай зарабатывать больше"
+      })(class="mobile-hidden")
+
+      +intro({
+        title: "Следи за новостями акции в наших соцсетях",
+      })(class="desktop-hidden")
+
+      +button({
+        link: "#",
+        title: "Принять участие",
+        class: "participate-button",
+      })(class="mt-32 mobile-hidden")
+
+      +social([
+        {
+          link: "#",
+          icon: "youtube",
+          sizes: [28, 19],
+        },
+        {
+          link: "#",
+          icon: "vk",
+          sizes: [28, 17],
+        },
+        {
+          link: "#",
+          icon: "telegram",
+          sizes: [27, 22],
+        },
+      ])(class="mt-90 mob-mt-40")
+
+  +footer({
+    background: "footer-bg",
+  })

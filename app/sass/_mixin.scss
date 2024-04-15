@@ -1,0 +1,63 @@
+@use "sass:list";
+
+@mixin media($status, $size) {
+  @media screen and (#{$status}-width: #{$size}px) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin size($width, $height: $width) {
+  width: #{$width};
+
+  @if $height {
+    height: #{$height};
+  }
+}
+
+@mixin adaptive-image($width, $height: $width) {
+  display: block;
+  aspect-ratio: list.slash($width, $height);
+  img {
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+  }
+}
+
+@mixin flex($align, $justify, $gap) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: #{$align};
+  justify-content: #{$justify};
+  gap: #{$gap};
+}
+
+@mixin grid($columns, $gap) {
+  display: grid;
+  grid-template-columns: #{$columns};
+  grid-gap: #{$gap};
+}
+
+@mixin bgImage($repeat, $position, $size, $url) {
+  background-repeat: #{$repeat};
+  background-position: #{$position};
+  background-size: #{$size};
+
+  @if $url {
+    background-image: url(#{$url});
+  }
+}
+
+@mixin adaptive-height {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+}

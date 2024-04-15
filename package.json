@@ -1,0 +1,44 @@
+{
+  "name": "webpack-collector",
+  "version": "1.0.0",
+  "description": "webpack+gulp",
+  "author": "developer",
+  "private": true,
+  "main": "index.html",
+  "scripts": {
+    "watch": "gulp watch:dev",
+    "favicon": "gulp favicon"
+  },
+  "dependencies": {
+    "gulp-sass": "^5.1.0",
+    "swiper": "^11.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.0",
+    "autoprefixer": "^9.6.1",
+    "babel-loader": "^9.1.2",
+    "babel-preset-latest": "^6.24.1",
+    "browser-sync": "^2.29.3",
+    "cross-env": "^7.0.3",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-cached": "^1.1.1",
+    "gulp-changed": "^4.0.3",
+    "gulp-concat": "^2.6.1",
+    "gulp-pug": "^5.0.0",
+    "gulp-real-favicon": "^0.3.2",
+    "gulp-remember": "^1.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-svg-sprite": "^2.0.3",
+    "sass": "^1.35.1",
+    "webpack": "^5.76.2",
+    "webpack-cli": "^5.0.1"
+  },
+  "overrides": {
+    "chokidar": "3.5.3",
+    "glob-parent": "6.0.2"
+  }
+}
