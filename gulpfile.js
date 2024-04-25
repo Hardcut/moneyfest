@@ -26,12 +26,12 @@ function clean() {
 function style() {
   return (
     gulp
-      .src(cssLibs)
+      .src(cssLibs, { encoding: false })
       .pipe(sourcemaps.init())
       .pipe(concat("libs.css"))
       .pipe(gulp.dest("dist/css")),
     gulp
-      .src("app/sass/style.scss")
+      .src("app/sass/style.scss", { encoding: false })
       .pipe(sourcemaps.init())
       .pipe(
         sass({ includePaths: ["app/blocks", "app/pages"] }).on(
@@ -51,7 +51,7 @@ function style() {
 }
 function html() {
   return gulp
-    .src("app/pages/**/*.pug")
+    .src("app/pages/**/*.pug", { encoding: false })
     .pipe(
       pug({
         doctype: "html",
@@ -81,22 +81,22 @@ function html() {
     .on("end", browserSync.reload);
 }
 function fontsTransfer() {
-  return gulp.src("app/fonts/**/*.*").pipe(gulp.dest("dist/fonts"));
+  return gulp.src("app/fonts/**/*.*", { encoding: false }).pipe(gulp.dest("dist/fonts"));
 }
 function bundleJS() {
   return (
     gulp
-      .src(jsLibs)
+      .src(jsLibs, { encoding: false })
       .pipe(concat("libs.js"))
       .pipe(gulp.dest("dist/js"))
       .on("end", browserSync.reload),
     gulp
-      .src(["app/blocks/**/*.js", "app/pages/**/*.js", "app/js/main.js"])
+      .src(["app/blocks/**/*.js", "app/pages/**/*.js", "app/js/main.js"], { encoding: false })
       .pipe(concat("scripts.js"))
       .pipe(gulp.dest("dist/js"))
       .on("end", browserSync.reload),
     gulp
-      .src(commonJsLibs)
+      .src(commonJsLibs, { encoding: false })
       .pipe(concat("common.js"))
       .pipe(gulp.dest("dist/js"))
       .on("end", browserSync.reload)
@@ -104,19 +104,19 @@ function bundleJS() {
 }
 function faviconSvg() {
   return gulp
-    .src("app/favicon.svg")
+    .src("app/favicon.svg", { encoding: false })
     .pipe(gulp.dest("dist/"))
     .on("end", browserSync.reload);
 }
 function images() {
   return gulp
-    .src("app/img/**/*.*")
+    .src("app/img/**/*.*", { encoding: false })
     .pipe(changed("dist/img"))
     .pipe(gulp.dest("dist/img"));
 }
 function icons() {
   return gulp
-    .src("app/icons/single/*.svg")
+    .src("app/icons/single/*.svg", { encoding: false })
     .pipe(replace("&gt;", ">"))
     .pipe(rename({ prefix: "icon-" }))
     .pipe(
